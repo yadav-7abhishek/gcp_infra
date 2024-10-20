@@ -1,6 +1,7 @@
 resource "google_project_service" "artifact_registry_api" {
   project = var.repo_project_id
   service = "artifactregistry.googleapis.com"
+  disable_on_destroy = false
 }
 
 resource "google_artifact_registry_repository" "project_docker_registry" {
